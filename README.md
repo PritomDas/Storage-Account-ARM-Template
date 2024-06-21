@@ -6,8 +6,7 @@
 ![Best Practice Check](https://azurequickstartsservice.blob.core.windows.net/badges/quickstarts/microsoft.storage/storage-account-create/BestPracticeResult.svg)
 ![Cred Scan Check](https://azurequickstartsservice.blob.core.windows.net/badges/quickstarts/microsoft.storage/storage-account-create/CredScanResult.svg)
 
-[![Deploy To Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPritomDas%2FStorage-Account-ARM-Template%2Fcc5214404a27f1797cdf5640085aa869e91c4aa0%2Fazuredeploy.json)
-
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPritomDas%2FStorage-Account-ARM-Template%2Fcc5214404a27f1797cdf5640085aa869e91c4aa0%2Fazuredeploy.json)
 
 This template creates a standard storage account.
 

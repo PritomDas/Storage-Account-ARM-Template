@@ -1,4 +1,4 @@
-# Create a Standard Storage Account
+# Create a Standard Storage Account with Storage Firewall enabled
 
 ![Azure Public Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/quickstarts/microsoft.storage/storage-account-create/PublicLastTestDate.svg)
 ![Azure Public Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/quickstarts/microsoft.storage/storage-account-create/PublicDeployment.svg)

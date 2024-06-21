@@ -1,13 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "metadata": {
-    "_generator": {
-      "name": "bicep",
-      "version": "0.13.1.58284",
-      "templateHash": "13120038605368246703"
-    }
-  },
   "parameters": {
     "storageAccountType": {
       "type": "string",
@@ -35,7 +28,7 @@
     },
     "storageAccountName": {
       "type": "string",
-      "defaultValue": "[format('store{0}', uniqueString(resourceGroup().id))]",
+      "defaultValue": "[format('l300bf2{0}', uniqueString(resourceGroup().id))]",
       "metadata": {
         "description": "The name of the storage account"
       }
@@ -52,18 +45,27 @@
       },
       "kind": "StorageV2",
       "properties": {
-          "publicNetworkAccess": "Enabled",
-          "allowCrossTenantReplication": false,
-          "minimumTlsVersion": "TLS1_0",
-          "allowBlobPublicAccess": false,
-          "networkAcls": {
-                "resourceAccessRules": [],
-                "bypass": "AzureServices",
-                "virtualNetworkRules": [],
-                "ipRules": [],
-                "defaultAction": "Deny"
-                        }
-}
+        "publicNetworkAccess": "Enabled",
+        "allowCrossTenantReplication": false,
+        "minimumTlsVersion": "TLS1_0",
+        "allowBlobPublicAccess": false,
+        "networkAcls": {
+          "resourceAccessRules": [],
+          "bypass": "AzureServices",
+          "virtualNetworkRules": [],
+          "ipRules": [],
+          "defaultAction": "Deny"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2022-09-01",
+      "name": "[format('{0}/default/l300blobfusecontainer', parameters('storageAccountName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+      ],
+      "properties": {}
     }
   ],
   "outputs": {
@@ -74,6 +76,10 @@
     "storageAccountId": {
       "type": "string",
       "value": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+    },
+    "containerName": {
+      "type": "string",
+      "value": "l300blobfusecontainer"
     }
   }
 }
